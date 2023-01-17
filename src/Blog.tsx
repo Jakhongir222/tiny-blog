@@ -18,7 +18,7 @@ export interface Articles  {
             method: "GET"
           });
           const jsonData = await data.json();
-          setArticles(jsonData.results);
+          setArticles(jsonData.posts);
         };
         api();
       }, []);
@@ -26,11 +26,14 @@ export interface Articles  {
 
       return (
         <div className="App">
-          <h1>
-            { articles && articles.length>0 && articles.map((value) => <p>{value.title}</p>
-            )}
-          </h1>
-          <h2>Start editing to see some magic happen!</h2>
+           <div>{ articles && articles.length>0 && articles.map((value) => 
+               <>
+                    <div key={value.id}>{value.title}</div>
+                    <div key={value.id}>{value.body}</div>
+                    <div key={value.id}>{value.tags}</div>
+               </>
+               )}
+           </div>
         </div>
       );
 
