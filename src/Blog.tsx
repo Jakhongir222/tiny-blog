@@ -47,6 +47,7 @@ const imageUrl =[
   export default function Blog (){
 
     const [articles, setArticles] = useState<Articles[]>([]);
+    const [sections, setSections] = useState<string[]>([]);
 
       useEffect(() => {
         const api = async () => {
@@ -58,23 +59,38 @@ const imageUrl =[
         };
         api();
       }, []);
+
+      useEffect(() => {
+        if (articles.length > 0) {
+            const tags = articles.map(article => article.tags).flat();
+            setSections(Array.from(new Set(tags)));
+        }
+    }, [articles]);
     
 
-      return (
-        <div>
-           <div className='container'>{ articles && articles.length>0 && articles.map((value) => 
-               <>
-                   <div key={value.id} className='card'>
-                        <img className='cart-image' src={imageUrl.find(img => img.title === value.title)?.url} width='368' height='250'/>
-                        <div className='card-title'>{value.title}</div>
-                        <div className='card-body'>{value.body}</div>
-                        <div className='card-tags'>{value.tags.map((tag) => (<span className='tag'>{tag}</span>))}</div>
+    return (
+        <div className='section-container'>
+              { sections.map(section => (
+                <div className="section" key={section}>
+                    <h2>{section.toUpperCase()}</h2>
+                    <div className='cards-container'>
+                      {articles.map(article => (
+                            article.tags.includes(section) && (
+                                <div key={article.id} className='card'>
+                                    <img className='cart-image' src={imageUrl.find(img => img.title === article.title)?.url} width='250' height='150'/>
+                                    <div className='card-title'>{article.title}</div>
+                                    <div className='card-body'>{article.body}</div>
+                                    <div className='card-tags'>{article.tags.map((tag) => (<span className='tag'>{tag.toUpperCase()}</span>))}</div>
+                                </div>
+                            )
+                      ))}
                     </div>
-               </>
-               )}
-           </div>
+                </div>
+              ))}
         </div>
-      );
+);
+
+
 
 
 }
