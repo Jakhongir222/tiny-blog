@@ -1,6 +1,12 @@
+body {
+  background-color: #e5e5e5;
+}
+
 .logo {
   width: 200px;
   height: auto;
   display: block;
   margin: 0 auto;
+  margin-top: 7px;
+  background-color: transparent;
 }
