@@ -73,9 +73,6 @@ const imageUrl =[
         }
     }, [articles]);
 
-    
-    
-
     return (
         <div className="section-container">
           {sections.map((section) => {
