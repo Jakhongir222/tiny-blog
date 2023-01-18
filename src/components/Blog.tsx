@@ -51,11 +51,7 @@ import { imageUrl } from './data'
                           <img className="card-image" src={imageUrl.find((img) => img.title === article.title)?.url} width="350" height="250"/>
                           <div className="card-title">{article.title}</div>
                           <div className="card-body">{article.body}</div>
-                          <div className="card-tags">
-                            {article.tags.map((tag) => (
-                              <span className="tag">{tag.toUpperCase()}</span>
-                            ))}
-                          </div>
+                          <div className="card-tags">{article.tags.map((tag) => (<span className="tag">{tag.toUpperCase()}</span>))}</div>
                         </div>
                       ))}
                   </div>
