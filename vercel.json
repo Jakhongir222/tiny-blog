@@ -1,0 +1,12 @@
+{
+    "routes": [
+       { "src": "^/static/(.*)", "headers": { "cache-control": "s-maxage=31536000,immutable" } },
+       { "src": "^/favicon.ico", "dest": "/favicon.ico" },
+       { "src": "^/manifest.json", "dest": "/manifest.json" },
+       { "src": "^/robots.txt", "dest": "/robots.txt" },
+       { "src": "^/sitemap.xml", "dest": "/sitemap.xml" },
+       { "src": "^/sw.js", "dest": "/sw.js" },
+       { "src": ".*", "dest": "/index.html" }
+     ]
+   }
+    
