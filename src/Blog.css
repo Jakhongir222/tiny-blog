@@ -9,10 +9,10 @@
 .card {
     border: 1px solid #ccc;
     padding: 10px;
-    margin-bottom: 10px;
+    margin: 15px;
     box-shadow: 2px 2px 5px #ccc;
     border-radius: 5px;
-    width: 400px;
+    width: 350px;
   }
   
   .card-title {
@@ -37,7 +37,7 @@
   }
 
   .cart-image {
-    width: 400px;
+    width: 350px;
     height: 250px;
     display: block;
     border-radius: 5px;
@@ -56,6 +56,12 @@
     background-blend-mode: multiply;
     background-size: cover;
     background-position: center;
+}
+
+.section {
+    display: flex;
+    justify-content: center;
+    
 }
 
 
