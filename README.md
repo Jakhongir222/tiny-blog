@@ -1,4 +1,4 @@
- ## Check out the result ->  [Tiny Tales](https://tiny-blog.vercel.app/)
+ ## Check out the result here ->  [Tiny Tales](https://tiny-blog.vercel.app/)
  
  ## Purpose
  
